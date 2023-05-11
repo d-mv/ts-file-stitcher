@@ -1,0 +1,15 @@
+**/node_modules
+**/.env
+**/.env.deploy
+**/.DS_Store
+**/dist
+**/build
+**/coverage
+**/static
+**/error.log
+**/logfile
+**/.env_prod
+**/data_folder
+
+# Local Netlify folder
+.netlify
