@@ -30,12 +30,12 @@ const IGNORED_FILES = ['.DS_Store'];
 
   process.stdout.write(staticMessage);
 
-  for await (const fileName of fileNames) {
+  for await (const fileName of fileNames.sort((a, b) => parseInt(a) - parseInt(b))) {
     writeOnTheSameLine(staticMessage.length, fileName);
     await addFile(`${args.sourceFolder}/${fileName}`, writableStream);
   }
 
   // eslint-disable-next-line no-console
-  console.log(`I am done! Joined ${fileNames.length} files into ${args.targetFileName}`);
+  console.log(`\nI am done! Joined ${fileNames.length} files into ${args.targetFileName}`);
   writableStream.end();
 })();
